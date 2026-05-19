@@ -1,7 +1,7 @@
 include .env
 export
 
-export PROJECT_ROOT=$(shell pwd) 
+export PROJECT_ROOT=$(shell pwd)
 
 
 
@@ -13,7 +13,7 @@ env-cleanup:
 	@ read -p "Clear all volume environment files? Risk of data loss. [Y/N]: " ans; \
 	if [ "$$ans" = "y" ]; then \
 		docker compose down todoapp-postgres && \
-		rm -rf out/pgdata && \
+		sudo rm -rf out/pgdata && \
 		echo "Environment files deleted"; \
 	else \
 		echo "File deletion canceled"; \
